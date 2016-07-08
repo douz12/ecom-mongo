@@ -1,15 +1,29 @@
 package com.ecom.document;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 public class Category {
-    @Id String id;
-    @Field(value = "cat") String designation;
+    @Id
+    @Indexed
+    String id;
+    @Field(value = "cat")
+    @Indexed
+    String designation;
+    Category subCategory;
 
     public Category(String id, String designation) {
         this.id = id;
         this.designation = designation;
+    }
+
+    public Category getSubCategory() {
+        return subCategory;
+    }
+
+    public void setSubCategory(Category subCategory) {
+        this.subCategory = subCategory;
     }
 
     public String getId() {

@@ -1,7 +1,24 @@
 package com.ecom.document;
 
-/**
- * Created by Workdev on 08/07/2016.
- */
+import org.springframework.data.annotation.Id;
+
 public class Vendor {
+    @Id String id;
+    String name;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
